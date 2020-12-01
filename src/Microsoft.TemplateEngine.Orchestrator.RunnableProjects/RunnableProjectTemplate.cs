@@ -201,9 +201,9 @@ namespace Microsoft.TemplateEngine.Orchestrator.RunnableProjects
 
         public IFileSystemInfo LocaleConfiguration => LocaleConfigFile;
 
-        public Guid LocaleConfigMountPointId => LocaleConfiguration.MountPoint.Info.MountPointId;
+        public Guid LocaleConfigMountPointId => LocaleConfiguration?.MountPoint.Info.MountPointId ?? Guid.Empty;
 
-        public string LocaleConfigPlace => LocaleConfiguration.FullPath;
+        public string LocaleConfigPlace => LocaleConfiguration?.FullPath;
 
         public bool IsNameAgreementWithFolderPreferred { get; }
 
